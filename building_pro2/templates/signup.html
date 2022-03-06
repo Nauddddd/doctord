@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<form action="/signup" method="POST">
+    <div id="login-box">
+        <div class="left">
+            <h1>Sign up</h1>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="notifi">
+                {{ messages[0] }}
+            </div>
+            {% endif %}
+            {% endwith %}
+            <input type="text" name="username" placeholder="Username" autofocus="" required/>
+            <input type="text" name="email" id="email" placeholder="E-mail" oninput="this.setCustomValidity('')"  />
+            <input type="password" name="password" id="password" placeholder="Password" onkeyup='check();' required />
+            <label >
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm password" onkeyup='check();' oninput="this.setCustomValidity('')" required />
+                <span id='message' name='message'></span>
+            </label>
+            
+            <input type="submit" name="signup_submit" value="Sign me up" onClick="onChange()"/>
+        </div>
+    </div>
+</form>
+
+
+
+{% endblock %}

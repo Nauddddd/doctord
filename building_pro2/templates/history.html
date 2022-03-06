@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="field-history">
+    <h1 class="h1-1">
+      Diagnostic History
+    </h1>
+    <table class="tb2" cellpadding="0">
+      <tr>
+        <th width = "50%" >Time</th> 
+        <th>Detail</th>
+      </tr>
+        {% for record in histories %}
+          <tr>
+            <td width = "50%" >{{ record.time }}</td>
+            <td>
+              <a class="detail" href="{{ url_for('main.detail',id =record.id)}}">
+                Detail
+              </a>
+            </td>
+          </tr>
+        {% endfor %}
+    </table>  
+</div>
+
+<div class ="field-pagination">
+  {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+  {% if page_num %}
+    {% if posts.page == page_num %}
+      <a class="pagination active" href="{{ url_for('main.history', page=page_num) }}">{{ page_num }}</a>
+    {% else %}
+      <a class="pagination " href="{{ url_for('main.history', page=page_num) }}">{{ page_num }}</a>
+    {% endif %}
+  {% else %}
+    ...
+  {% endif %}
+{% endfor %}
+</div>
+{% endblock %}

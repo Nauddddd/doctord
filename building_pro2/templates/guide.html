@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="h1-1" id="tutorial">Instructions</h1>
+<div id="guide-box">
+    <div class="services-wrap">
+        <h2>1. Take x-ray image</h2>
+        <p>Take chest x-ray images using specialized tools.</p>
+    </div>
+    <div class="services-wrap" >
+        <h2>2. Upload image</h2>
+        <p>Upload the images of step 1 into the application(Requires <a href="{{ url_for('auth.login') }}" class="a-guide">login</a>).</p>
+    </div>
+    <div class="services-wrap" >
+        <h2>3. Retrieve prediction result</h2>
+        <p>Based on the information you provide, The prediction includes the following abnormalities:</p>
+        <p id="0" style="margin-left: 20px"><b>0</b>  - <a class="a-guide" href="https://www.baptisthealth.com/services/heart-care/conditions/aortic-aneurysm-enlarged-aorta#:~:text=If%20the%20walls%20of%20the,body%20(thoracic%20aortic%20aneurysm)" target="_blank" rel="noopener noreferrer">Aortic enlargement</a><p>
+        <p id="1" style="margin-left: 20px"><b>1</b>  - <a class="a-guide" href="https://www.mayoclinic.org/diseases-conditions/atelectasis/symptoms-causes/syc-20369684#:~:text=Atelectasis%20(at%2Duh%2DLEK,(respiratory)%20complications%20after%20surgery." target="_blank" rel="noopener noreferrer">Atelectasis</a><p>
+        <p id="2" style="margin-left: 20px"><b>2</b>  - <a class="a-guide" href="https://www.healthline.com/health/calcification" target="_blank" rel="noopener noreferrer">Calcification</a></p>
+        <p id="3" style="margin-left: 20px"><b>3</b>  - <a class="a-guide" href="https://www.mayoclinic.org/diseases-conditions/enlarged-heart/symptoms-causes/syc-20355436#:~:text=Enlarged%20heart%2C%20in%20heart%20failure,-As%20the%20heart&text=An%20enlarged%20heart%20(cardiomegaly)%20isn,the%20heart%20to%20be%20enlarged." target="_blank" rel="noopener noreferrer">Cardiomegaly</a></p>
+        <p id="4" style="margin-left: 20px"><b>4</b>  - <a class="a-guide" href="https://en.wikipedia.org/wiki/Pulmonary_consolidation" target="_blank" rel="noopener noreferrer">Consolidation</a></p>
+        <p id="5" style="margin-left: 20px"><b>5</b>  - <a class="a-guide" href="https://www.lung.org/lung-health-diseases/lung-disease-lookup/interstitial-lung-disease#:~:text=Interstitial%20lung%20disease%20(ILD)%20is,and%20gets%20worse%20over%20time." target="_blank" rel="noopener noreferrer">Interstitial lung disease(ILD)</a></p>
+        <p id="6" style="margin-left: 20px"><b>6</b>  - <a class="a-guide" href="https://en.wikipedia.org/wiki/Infiltration_(medical)#:~:text=From%20Wikipedia%2C%20the%20free%20encyclopedia,or%20cells%20is%20called%20infiltrate." target="_blank" rel="noopener noreferrer">Infiltration</a></p>
+        <p id="7" style="margin-left: 20px"><b>7</b>  - <a class="a-guide" href="https://link.springer.com/referenceworkentry/1" target="_blank" rel="noopener noreferrer">Lung Opacity</a></p>
+        <p id="8" style="margin-left: 20px"><b>8</b>  - <a class="a-guide" href="https://www.cancer.org/cancer/lung-cancer/detection-diagnosis-staging/lung-nodules.html" target="_blank" rel="noopener noreferrer">Nodule/Mass</a></p>
+        <p id="9" style="margin-left: 20px"><b>9</b>  - <a class="a-guide" href="#" target="_blank" rel="noopener noreferrer">Other lesion</a></p>
+        <p id="10" style="margin-left: 20px"><b>10</b> -<a class="a-guide" href="https://my.clevelandclinic.org/health/diseases/17373-pleural-effusion-causes-signs--treatment#:~:text=Pleural%20effusion%2C%20sometimes%20referred%20to,to%20lubricate%20and%20facilitate%20breathing." target="_blank" rel="noopener noreferrer">Pleural effusion</a></p>
+        <p id="11" style="margin-left: 20px"><b>11</b> -<a class="a-guide" href="https://www.mesothelioma.com/asbestos-cancer/pleural-thickening/" target="_blank" rel="noopener noreferrer">Pleural thickening</a></p>
+        <p id="12" style="margin-left: 20px"><b>12</b> -<a class="a-guide" href="https://www.mayoclinic.org/diseases-conditions/pneumothorax/symptoms-causes/syc-20350367#:~:text=A%20pneumothorax%20(noo%2Dmoe%2D,a%20portion%20of%20the%20lung." target="_blank" rel="noopener noreferrer">Pneumothorax</a></p>
+        <p id="13" style="margin-left: 20px"><b>13</b> -<a class="a-guide" href="https://my.clevelandclinic.org/health/diseases/10959-pulmonary-fibrosis" target="_blank" rel="noopener noreferrer">Pulmonary fibrosis</a></p>
+    </div>
+</div>
+
+{% endblock %}

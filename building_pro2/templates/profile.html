@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<span class="profile">
+  <h1 >
+    Welcome 
+  </h1>
+  <h1 class="name"> {{ name }}</h1>
+</span>
+<div id="login-box">
+  <div class="left">
+      <h1 class="h1-1" >
+        Account Infomation
+      </h1>
+      <div class="field">
+        <label class="field-info">
+          Username: {{ name }}
+        </label>
+        <label class="field-info">
+          Email: {{ email }}
+        </label>
+        <label class="field-info">
+          Created: {{ created }}
+        </label>
+      </div>
+      <div class="a-note">
+        <a  href="{{url_for('main.guide')}}">Read some instructions to use the app </a>
+      </div>
+  </div>
+</div>
+{% endblock %}

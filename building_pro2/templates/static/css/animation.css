@@ -1,0 +1,29 @@
+@keyframes uparrow {
+    0% { transform: translateY(0); opacity: 0.4 }
+    100% { transform: translateY(-0.4em); opacity: 0.9 }
+}
+@keyframes downarrow {
+    0% { transform: translateY(0); opacity: 0.4 }
+    100% { transform: translateY(0.4em); opacity: 0.9 }
+}
+
+
+.arrow {
+    /* text-align: center; */
+    margin: auto;
+    border-color:transparent;
+    border-style:solid;
+    border-width:0 3em;
+    display:block;
+    opacity:0.4;
+    transform-origin: 50% 50%;
+    width:0;
+}
+.up {
+    animation: uparrow 0.6s infinite alternate ease-in-out;
+    border-bottom:2em solid #00b6f1;
+}
+.down {
+    animation: downarrow 0.6s infinite alternate ease-in-out;
+    border-top:2em solid #00b6f1;
+}

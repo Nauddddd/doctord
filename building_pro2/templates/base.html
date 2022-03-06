@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="static/css/animation.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/form.css">
+    <link rel="stylesheet" href="static/css/upload.css">
+    <title>Doctor D</title>
+</head>
+<body>
+    <secsion class="showcase">
+        <header>
+            <div>
+                <div class="sec-center"> 	
+                    <input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
+                    <!-- <div class="for-dropdown "></div> -->
+                    <label class="for-dropdown" for="dropdown"></label>
+                    <div class="section-dropdown"> 
+                        <a href="{{ url_for('main.index') }}" >
+                            Home
+                        </a>
+                        {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('main.profile') }}" >
+                            Profile
+                        </a>
+                        <a href="{{ url_for('main.history') }}" >
+                            History
+                        </a>
+                        {% else %}
+                        {% endif %}
+                        <a href="{{url_for('main.guide')}}">
+                            Guide
+                        </a>
+                        {% if not current_user.is_authenticated %}
+                        <a href="{{ url_for('auth.signup') }}" >
+                            Signup
+                        </a>
+                        <a href="{{ url_for('auth.login') }}" >
+                            Login
+                        </a>
+                        {% endif %}
+                        {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('auth.logout') }}" >
+                            Logout
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <h1 class="logoD">Doctor D</h1>
+            <div>
+                <div class="toggle "></div>
+            </div>
+        </header>
+        <div class="overlay-header"></div>
+        <video src="static/video/background.mp4" muted loop autoplay></video>
+
+        
+        <div class="overlay"></div>
+
+        {% block content %}
+        {% endblock %}
+        
+    </secsion>
+
+    <div class="menu">
+        <div class="about" >
+            <h2>Doctor D</h2>
+            <p>We use the public data of VinBigdata to build a app to help detect abnormalities through chest x-ray images</p>
+        </div>                
+        <div class="backBtn" id="btn0">
+            <span class="line tLine"></span>
+            <span class="line mLine"></span>
+            <span class="label">Back</span>
+            <span class="line bLine"></span>
+        </div>
+        <div class="contact">
+            <h2>Contact</h2>
+            <p>Email: duantarzan@gmail.com</p>
+            <p>Phone: +84 963896032</p>
+        </div>
+        <ul class="social">
+            <li><a href="https://www.facebook.com/O8o.o8O/" target="_blank"><img src="static/img/facebook.png" alt=""></a></li>
+            <li><a href="https://twitter.com/TrnhQuangDun4" target="_blank"><img src="static/img/twitter.png" alt=""></a></li>
+            <li><a href="https://www.instagram.com/duantarzan/?hl=en" target="_blank"><img src="static/img/instagram.png" alt=""></a></li>
+        </ul>
+    </div>
+    
+</body>
+<script src="static/js/script.js"></script>
+<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+</html>
